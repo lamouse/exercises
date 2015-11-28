@@ -6,10 +6,13 @@ int main(int argc, char const *argv[])
 
 	unsigned char str[16];
 	int len = 16;
-	unsigned short byte = *(unsigned short*)str;
-	byte = 333;
+	*(unsigned short*)str = 333;
+
 	int sum = 0;
+	unsigned short test = checksum(str,16);
+	*(unsigned short*)str = 323;
 	unsigned short *data = (unsigned short*)str;
+
 	while(len > 1){
 		sum += *data++;
 		len -= sizeof(unsigned short);
@@ -21,7 +24,7 @@ int main(int argc, char const *argv[])
 
 	sum=(sum >> 16) + (sum&0xffff);
 	sum += (sum >> 16);
-	unsigned short test = checksum(str,16);
+	
 
 	printf("Test %x\n",test + sum);
 
