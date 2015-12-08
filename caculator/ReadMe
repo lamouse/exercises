@@ -1,0 +1,17 @@
+计算器 计算简单的表达式:
+关于:
+	stack.h 一个简单的栈， push操作入栈， pop出栈， top获得栈的顶层元素 is_empty判断是否为空
+			is_full判断栈是否满了 init初始化栈
+	stack.c 为实现
+	
+	calculator.c 计算器实现
+	pretreament预处理， 判断表达是是否合法，处理掉空格
+	push_num把读入的字符串中的数字压入栈
+	put_num把计算结果压入栈
+	caiculated计算 ch为0的时候计算上次的结果比如 
+		a+b+c读到c前面的加号时计算前面的结果ch为(处理前面的结果
+	caiculated_result计算表达式的结果
+BUG 连续的‘+’， ‘-’不能判断为表达式错误
+缺点不能动态判断表达式是否合法，不能处理类似a(a+b)（表示为 a*(a+b)） sin等数学函数 复数
+	by sora
+		发现BUG联系我，或在下面评论 QQ2292223774	makealllist@gmain.com

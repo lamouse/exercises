@@ -1,0 +1,6 @@
+CC=gcc
+CFLAGS=-Wall -std=c11 
+DEBUG=-DNODEBUG
+SRC=./src/calculator.c ./src/stack.c
+all:
+	$(CC) $(SRC) $(CFLAGS) $(DEBUG) -o calculator
