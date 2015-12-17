@@ -13,6 +13,6 @@
 	caiculated_result计算表达式的结果
 BUG 连续的‘+’， ‘-’不能判断为表达式错误
 缺点不能动态判断表达式是否合法，不能处理类似a(a+b)（表示为 a*(a+b)） sin等数学函数 复数
-	by sora
     make -e DEBUG= 可以打开调试信息
 		发现BUG联系我，或在下面评论 QQ2292223774	makealllist@gmain.com
+                                                                sora
