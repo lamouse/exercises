@@ -1,7 +1,7 @@
 计算器 计算简单的表达式:
 关于:
 	stack.h 一个简单的栈， push操作入栈， pop出栈， top获得栈的顶层元素 is_empty判断是否为空
-			is_full判断栈是否满了 init初始化栈
+			is_full判断栈是否为满 init初始化栈
 	stack.c 为实现
 	
 	calculator.c 计算器实现
@@ -14,5 +14,5 @@
 BUG 连续的‘+’， ‘-’不能判断为表达式错误
 缺点不能动态判断表达式是否合法，不能处理类似a(a+b)（表示为 a*(a+b)） sin等数学函数 复数
     make -e DEBUG= 可以打开调试信息
-		发现BUG联系我，或在下面评论 QQ2292223774	makealllist@gmain.com
+		发现BUG联系我，或在下面评论 QQ2292223774	makealllist@gmail.com
                                                                 sora
