@@ -235,7 +235,7 @@ void pretreament(char expression[], const size_t ex_len){
 			 	return;
 			}
 			if(parentheses < 0){
-				snprintf(errmsg,"')'more than '('");
+				snprintf(errmsg, ERRLEN-1, "')'more than '('");
 				return;
 			}
 		}
