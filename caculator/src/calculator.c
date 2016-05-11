@@ -233,7 +233,11 @@ void pretreament(char expression[], const size_t ex_len){
 			default :
 			 	strncpy(errmsg, "is not a expression", ERRLEN);
 			 	return;
-			}			
+			}
+			if(parentheses < 0){
+				snprintf(errmsg,"')'more than '('");
+				return;
+			}
 		}
 	if(parentheses != 0){
 		snprintf(errmsg, ERRLEN-1, "parentheses '%c' more than '%c'", 
