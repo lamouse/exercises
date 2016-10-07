@@ -1,7 +1,7 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 #include <list>
-#include "base/base.hpp"
+#include "base.hpp"
 
 class snake
 {
