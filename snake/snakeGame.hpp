@@ -2,7 +2,7 @@
 #define SnakeGame_H
 #include <deque>
 #include "snake.hpp"
-#include "base/base.hpp"
+#include "base.hpp"
 /**
  *snake game class
  *
