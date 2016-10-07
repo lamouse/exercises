@@ -8,7 +8,7 @@
 #include <windows.h>
 #include "snake.hpp"
 #include "game.hpp"
-#include "base/base.hpp"
+#include "base.hpp"
 #include "SnakeGame.hpp"
 #define LV_MAX 7			//
 #define WIDTH 40			//game width
@@ -109,7 +109,7 @@ bool SnakeGame::start()
 	gotoxy(10, 11, color::BLUE);
 	std::cout << "Enter start game ESC exit";
 	gotoxy(10, 12, color::BLUE);
-	std::cout << "¡ûLv Up Lv Down ¡ú";
+	std::cout << "â†Lv Up Lv Down â†’";
 	gotoxy(35, 11, color::RED);
 	std::cout << level;
 	gotoxy(34, 15, color::RED);
@@ -150,23 +150,23 @@ void create_map(void)
 	for (w = 0; w < WIDTH; w++)
 	{
 		gotoxy(w, 0, color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 	}
 	//map center
 	for (h = 1; h < HEIGHT - 1; h++)
 	{
 		gotoxy(0, h, color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 		gotoxy(31, h, color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 		gotoxy(WIDTH - 1, h, color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 	}
 	//bottom
 	for (w = 0; w < WIDTH; w++)
 	{
 		gotoxy(w, HEIGHT - 1, color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 	}
 	gotoxy(34, 2, color::GREEN);
 	std::cout << "esurient";
@@ -175,7 +175,7 @@ void create_map(void)
 	gotoxy(34, 5, color::GREEN);
 	std::cout << "operation";
 	gotoxy(33, 7, color::GREEN);
-	std::cout << "¡û ¡ü ¡ý ¡ú";
+	std::cout << "â† â†‘ â†“ â†’";
 	gotoxy(34, 10, color::GREEN);
 	std::cout << "level";
 	gotoxy(34, 13, color::GREEN);
@@ -203,7 +203,7 @@ void SnakeGame::create_food(void)
 	
 	//disply food
 	gotoxy(food_position.get_x(), food_position.get_y(), color::RED);
-	std::cout << "¡ñ";
+	std::cout << "â—";
 }
 
 void SnakeGame::move_snake()
@@ -239,7 +239,7 @@ bool SnakeGame::is_dead()
 		head.get_x() == WIDTH - 9 || head.get_y() == HEIGHT - 1)
 	{
 		gotoxy(head.get_x(), head.get_y(), color::BLUE);
-		std::cout << "¡ö";
+		std::cout << "â– ";
 		return true;
 	}
 	return false;
@@ -254,7 +254,7 @@ void SnakeGame::init_data()
 bool SnakeGame::exit_game()
 {
 	gotoxy(2, HEIGHT, color::RED);
-	std::cout << "ÍË³ö?";
+	std::cout << "é€€å‡º?";
 	
 	while(true)
 	{
