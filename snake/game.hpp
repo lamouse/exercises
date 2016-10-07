@@ -1,19 +1,19 @@
 #ifndef SNAKE_GAME_H
 #define SNAKE_GAME_H
-#include "base/base.hpp"
+#include "base.hpp"
 /**
  in <conio.h> _getch() keybord value and windows clolor define 
- *UP 72					//·½Ïò¼ü ¡ü
- *DOWN 80				//·½Ïò¼ü ¡ý
- *LEFT 75				//·½Ïò¼ü ¡û
- *RIGHT 77				//·½Ïò¼ü ¡ú
- *ESC 27				//ESC¼ü
- *ENTER 13				//»Ø³µ¼ü
- *SPACE 32   			//¿Õ¸ñ
- *GREEN 0XA      	 	//ÂÌÉ«
- *BLUE 0xB				//À¶É«
- *RED 0xC				//ºìÉ«
- *WHITE 0xB|0xC			//°×É«
+ *UP 72					//æ–¹å‘é”® â†‘
+ *DOWN 80				//æ–¹å‘é”® â†“
+ *LEFT 75				//æ–¹å‘é”® â†
+ *RIGHT 77				//æ–¹å‘é”® â†’
+ *ESC 27				//ESCé”®
+ *ENTER 13				//å›žè½¦é”®
+ *SPACE 32   			//ç©ºæ ¼
+ *GREEN 0XA      	 	//ç»¿è‰²
+ *BLUE 0xB				//è“è‰²
+ *RED 0xC				//çº¢è‰²
+ *WHITE 0xB|0xC			//ç™½è‰²
 **/
 //keybord->value
 enum {
