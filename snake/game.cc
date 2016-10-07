@@ -3,7 +3,7 @@
 #include <conio.h>
 #include "snake.hpp"
 #include "game.hpp"
-#include "base/base.hpp"
+#include "base.hpp"
 #include "snakeGame.hpp"
 static HANDLE hOut;
 static COORD coordinate;
@@ -39,13 +39,13 @@ int menu()
 	int games = 8;
 	int ch = 0;
 	gotoxy(12, 8, color::RED);
-	std::cout << "1.Ì°³ÔÉß";
+	std::cout << "1.è´ªåƒè›‡";
 	gotoxy(12, 9, color::RED);
-	std::cout << "2.Ì°³ÔÉßAI";
+	std::cout << "2.è´ªåƒè›‡AI";
 	gotoxy(12, 10, color::RED);
-	std::cout << "3.ÍË³ö";
+	std::cout << "3.é€€å‡º";
 	gotoxy(11, 8, color::WHITE);
-	std::cout << "¡ú";
+	std::cout << "â†’";
 	while ((ch = _getch()) != ENTER)
 	{
 		if (ch == UP)
@@ -69,7 +69,7 @@ int menu()
 				games = snake_game;
 		}
 		gotoxy(11, games, color::WHITE);
-		std::cout << "¡ú";
+		std::cout << "â†’";
 	}
 	return games;
 }
@@ -80,6 +80,6 @@ void play_snake_game()
 }
 void play_snake_ai()
 {
-	std::cout << " ÔÝÈ±£¬ ÈÎÒâ¼ü·µ»Ø";
+	std::cout << " æš‚ç¼ºï¼Œ ä»»æ„é”®è¿”å›ž";
 	_getch();
 }
