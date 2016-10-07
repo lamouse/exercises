@@ -1,6 +1,6 @@
 #include <iostream>
 #include <algorithm>
-#include "base/base.hpp"
+#include "base.hpp"
 #include "snake.hpp"
 #include "game.hpp"
 
@@ -24,7 +24,7 @@ void snake::eat_food(){
 void snake::move(){
 	auto p = next();
 	gotoxy(p.get_x(), p.get_y(),color::YELLO);
-	std::cout << "¡ñ";
+	std::cout << "Â¡Ã±";
 	draw(pos.front());
 	pos.push_front(p);
 	if(!is_eat_food){
@@ -40,7 +40,7 @@ void snake::move(){
 
 void snake::draw(const postion& p){
 	gotoxy(p.get_x(), p.get_y(),color::WHITE);
-	std::cout << "¡ö";
+	std::cout << "Â¡Ã¶";
 }
 
 void snake::wipe(const postion& p){
