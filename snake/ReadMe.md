@@ -1,2 +1,2 @@
 snake game
-build on windows use ming G++
+build on windows use mingw64 G++
