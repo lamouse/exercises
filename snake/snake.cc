@@ -75,7 +75,7 @@ postion snake::move_right(){
 }
 
 postion snake::next(){
-		switch(dire){
+	switch(dire){
 		case direction::UP:
 			return move_up();
 		case direction::DOWN:
@@ -85,7 +85,6 @@ postion snake::next(){
 		case direction::RIGHT:
 			return move_right();
 	}
-	throw int(1);
 }
 
 snake::~snake(){
