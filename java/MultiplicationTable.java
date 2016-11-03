@@ -1,5 +1,6 @@
 /**
  * Created by sora on 16/11/03 -003.
+ * 输出99乘法表的三种方式
  */
 public class MultiplicationTable {
     public void printMultiplicationTableByDoubleForLoop(){
