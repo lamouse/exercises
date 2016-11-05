@@ -1,24 +1,22 @@
 /**
  * Created by sora on 16/11/03 -003.
- * 输出99乘法表的三种方式
+ *九九乘法表三种输出方式
  */
 public class MultiplicationTable {
     public void printMultiplicationTableByDoubleForLoop(){
         for(int i = 1; i < 10; i++){
             for(int j = 1; j <= i; j++){
-                System.out.print(i + " * " + j + " = " + i*j + "\t");
+                System.out.print(j + " * " + i + " = " + i*j + (i== j ? "\n": "\t"));
             }
-            System.out.println();
         }
     }
 
     public void printMultiplicationTableBySingleForLoop(){
         for(int i = 1, j = 1; i < 10 ; j++){
-            System.out.print(i + " * " + j + " = " + i*j + "\t");
+            System.out.print(j + " * " + i + " = " + i*j + (i== j ? "\n": "\t"));
             if (i == j){
                 i++;
-                j = 1;
-                System.out.println();
+                j = 0;
             }
         }
     }
@@ -35,9 +33,6 @@ public class MultiplicationTable {
                 printMultiplicationTableByNoneForLoop(i, j-1);
             }
         }
-        System.out.print(j + " * " + i + " = " + i*j + "\t");
-        if(i == j){
-            System.out.println();
-        }
+        System.out.print(j + " * " + i + " = " + i*j + (i== j ? "\n": "\t"));
     }
 }
