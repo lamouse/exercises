@@ -2,8 +2,8 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-	<description>yz_xiaoyu_manage</description>
-  	<display-name>yz_xiaoyu_manage</display-name>
+	<description>wxc_manage</description>
+  	<display-name>wxc_manage</display-name>
   	<!--  Spring 服务层的配置文件  --> 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -36,7 +36,7 @@
 <!--	 用户登录过滤  开始
 	<filter>
 		<filter-name>loginFilter</filter-name>
-		<filter-class>com.yjzs.xiaoyu.manage.filter.LoginFilter</filter-class>
+		<filter-class>com.wxc.manage.filter.LoginFilter</filter-class>
 		<init-param>
 			<param-name>exRouteDologin</param-name>
 			<param-value>user/login.do</param-value>
