@@ -2,6 +2,9 @@
 #include <utility>
 #include <random>
 #include <stack>
+#include <algorithm>
+#include <iterator>
+#include <functional>
 template<typename T>
 void qsort(T arr[], const int& start, const int& end){
 	if(start >= end) return;
@@ -30,7 +33,7 @@ struct Range {
 };
 
 template<typename T>
-void iteraQsort(T arr[], int len){
+void iteraQsort(T arr[], const int& len){
 if (len <= 0) return; 
 	Range r[len]; int p = 0;
 	r[p++] = Range(0, len - 1);
@@ -53,8 +56,57 @@ if (len <= 0) return;
 	}
 }
 
+template<typename T, typename C>
+void iteraQsort(T arr[], const int& len, C cmp){
+if (len <= 0) return; 
+	Range r[len]; int p = 0;
+	r[p++] = Range(0, len - 1);
+	while (p) {
+		Range range = r[--p];
+		if(range.start >= range.end) continue;
+		T mid = arr[range.end];
+		int left = range.start, right = range.end - 1;
+		while (left < right) {
+			while (cmp(arr[left], mid) && left < right) left++;
+			while (!cmp(arr[right], mid) && left < right) right--;
+			std::swap(arr[left], arr[right]);
+		}
+		if (!cmp(arr[left], arr[range.end]))
+			std::swap(arr[left], arr[range.end]);
+		else
+			left++;
+		r[p++] = Range(range.start, left - 1);
+		r[p++] = Range(left + 1, range.end);
+	}
+}
+
+template<typename T>
+void iteraQsort(T arr[], int len, std::function<bool(T, T)> cmp) {
+	if (len <= 0) return;
+	Range r[len]; int p = 0;
+	r[p++] = Range(0, len - 1);
+	while (p) {
+		Range range = r[--p];
+		if (range.start >= range.end) continue;
+		T mid = arr[range.end];
+		int left = range.start, right = range.end - 1;
+		while (left < right) {
+			while (cmp(arr[left], mid) && left < right) left++;
+			while (!cmp(arr[right], mid) && left < right) right--;
+			std::swap(arr[left], arr[right]);
+		}
+		if (!cmp(arr[left], arr[range.end]))
+			std::swap(arr[left], arr[range.end]);
+		else
+			left++;
+		r[p++] = Range(range.start, left - 1);
+		r[p++] = Range(left + 1, range.end);
+	}
+}
+
 template<typename T>
 void stackQsort(T arr[], const int& len){
+	std::cout << std::endl; 
 	if(len <= 1)
 		return;
 	int left = 0, right = len - 1;
@@ -89,16 +141,22 @@ int main(int argc, char const *argv[])
 	for(int i = 0; i < 20; i++){
 		arr[i] = e() % 20;
 	}
-	cout << "排序前: " << endl;
-	for(int i = 0; i < 20; i++){
-		cout << arr[i] << " ";
-	}
+	for_each(begin(arr), end(arr), [](const int& i){cout << i << " ";});
 	cout << endl;
-	cout << "排序后: " << endl;
-	stackQsort(arr, 20);
-	for(int i = 0; i < 20; i++){
-		cout << arr[i] << " ";
-	}
+	//stackQsort(arr, sizeof(arr)/sizeof(arr[0]));
+	iteraQsort(arr, sizeof(arr)/sizeof(arr[0]), less<int>());
+	cout << boolalpha <<"递归快速排序, 是否完成排序: " 
+		<< is_sorted(begin(arr), end(arr)) << endl;
+/*	stackQsort(arr, sizeof(arr)/sizeof(arr[0]));
+	cout << "使用栈快速排序, 是否完成排序: " 
+		<< is_sorted(begin(arr), end(arr)) << endl;*/
+/*	iteraQsort(arr, sizeof(arr)/sizeof(arr[0]);
+	cout << "迭代快速排序, 是否完成排序: " 
+		<< is_sorted(begin(arr), end(arr)) << endl;*/
+/*	iteraQsort(arr, sizeof(arr), [](const int& i, const int& j){
+		return i > j;
+	});*/
+	for_each(begin(arr), end(arr), [](const int& i){cout << i << " ";});
 	cout << endl;
 	return 0;
 }
