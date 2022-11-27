@@ -1,0 +1,7 @@
+*.out
+*.dSYM/
+*.swp
+.DS_Store
+.vscode/
+info.plist
+.VScodeCounter/
